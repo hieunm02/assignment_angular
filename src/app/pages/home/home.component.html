@@ -9,16 +9,16 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-css">
         <header>
             <a routerLink="/" routerLinkActive="active"><img src="https://ap.poly.edu.vn/images/logo.png" alt="" class="logo"></a>
             <app-header></app-header>
         </header>
 
-        <main>
+        <main style="padding: 10px;">
                 <div class="product">
-                <!-- @foreach($subject as $sub) -->
-                    <div class="product__item">
+                
+                    <div class="product__item" *ngFor="let item of subjects">
                         <div class="product-header">
                             <div class="product-button">
                                 <a href=""><button type="submit">Làm Quiz</button></a>
@@ -30,11 +30,10 @@
                         </div>
 
                         <div class="info">
-                            <h3>Mã môn: 1</h3>
-                            <a href="" class="info-name">Tin học văn phòng</a>
+                            <h4>Mã môn: {{item.id}}</h4>
+                            <a href="" class="info-name">{{item.Name}}</a>
                         </div>
                     </div>
-                <!-- @endforeach -->
             </div>
         </main>
 
