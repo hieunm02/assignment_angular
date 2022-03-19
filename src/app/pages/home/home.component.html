@@ -21,7 +21,7 @@
                     <div class="product__item" *ngFor="let item of subjects">
                         <div class="product-header">
                             <div class="product-button">
-                                <a href=""><button type="submit">Làm Quiz</button></a>
+                                <a [routerLink]="'subject/' + item.id" routerLinkActive="active"><button type="submit">Làm Quiz</button></a>
                             </div>
                             <div class="product-image">
                                 <img src="https://cms.poly.edu.vn/asset-v1:FPOLY+COM107+2019_T09+type@asset+block@nganh-cong-nghe-thong-tin-hoc-nhung-mon-gi-1.jpg" alt="" class="image">

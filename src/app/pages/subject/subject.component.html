@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-css">
+        <header>
+            <a routerLink="/" routerLinkActive="active"><img src="https://ap.poly.edu.vn/images/logo.png" alt="" class="logo"></a>
+            <app-header></app-header>
+            
+        </header>
+
+        <main>
+            <div class="content" *ngFor="let item of subjects">
+
+                <div class="main" *ngIf="item.id == id">
+                    <div class="name-quiz" >
+        <h2 style="text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;">{{item.Name}}</h2>
+                    </div>
+                    <div class="list-quiz" >
+                        <ul>
+                            <li>
+                <a [routerLink]="'quiz/' + item.Code" routerLinkActive="active" class="quiz" >{{item.Code}}</a> 
+                
+                        
+                            </li><br>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

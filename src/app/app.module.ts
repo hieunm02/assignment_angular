@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SubjectComponent } from './pages/subject/subject.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { LoginComponent } from './pages/login/login.component';
     PageNotFoundComponent,
     HeaderComponent,
     LoginComponent,
+    SubjectComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

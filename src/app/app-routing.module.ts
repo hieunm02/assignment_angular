@@ -1,3 +1,5 @@
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { SubjectComponent } from './pages/subject/subject.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -7,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'subject/:id', component: SubjectComponent },
+  { path: 'subject/:id/quiz/:id', component: QuizComponent },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 

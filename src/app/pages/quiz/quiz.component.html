@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-css">
+        <header>
+            <a routerLink="/" routerLinkActive="active"><img src="https://ap.poly.edu.vn/images/logo.png" alt="" class="logo"></a>
+            <app-header></app-header>
+        </header>
+
+        <main>
+            <div class="content">
+               
+                <div class="main">
+
+                    <div class="name-quiz" >
+                        <div *ngFor="let s of subjects">
+                        <h2 style="text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;" *ngIf="s.Code == code">{{s.Name}}</h2>
+                    </div>
+                    </div>
+                    <div>
+                        <!-- <h2>Thời gian làm bài: <span id="time">{{ $data['duration_minutes'] }} </span> Phút</h2> -->
+                    </div>
+
+                    <!-- <?php $_SESSION['countQuestion'] = count($startQuiz) ?> -->
+                    <!-- câu hỏi -->
+                    <form action="" method="POST">
+                        <!-- <input type="hidden" name="studentId" value="{{ $_SESSION['id'] }}" id="">
+                        <input type="hidden" name="quizId" value="{{ $data->id }}" id=""> -->
+                        <!-- @foreach ($startQuiz as $startQuiz) -->
+                            <div class="question" *ngFor="let item of questions">
+                                <div class="list-question">
+                                    
+
+                                    <ul>
+                                        <li><a class="startQuiz" id="">{{item.Text}}</a></li><br>
+                                        <li>
+                                            <!-- <input type="hidden" name="questionId[]" value="{{ $startQuiz->id }}" id=""> -->
+                                            <!-- câu trả lời -->
+                                            <!-- @foreach ($answer as $ans)  -->
+                                                <!-- <?php if ($startQuiz['id'] == $ans['question_id']) { ?> -->
+                                                    <input type="radio" name="" value="">{{item.Answers | json}}<br>
+                                                <!-- <?php } ?>
+                                            @endforeach -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        <!-- @endforeach -->
+                        <button type="submit" class="btn-endquiz" name="endQuiz">Hoàn thành</button><br>
+
+                    </form><br>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function() {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            var fiveMinutes = 60 * "<?= $data['duration_minutes']; ?>",
+                display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+        };
+    </script>
+</body>
+
+</html>
