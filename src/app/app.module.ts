@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SubjectComponent } from './pages/subject/subject.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { FinalComponent } from './pages/final/final.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     LoginComponent,
     SubjectComponent,
     QuizComponent,
+    FinalComponent,
   ],
   imports: [
     BrowserModule,

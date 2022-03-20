@@ -22,7 +22,7 @@
 
                     <div class="name-quiz" >
                         <div *ngFor="let s of subjects">
-                        <h2 style="text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;" *ngIf="s.Code == code">{{s.Name}}</h2>
+                        <h2 style="text-transform: uppercase; font-family: Arial, Helvetica, sans-serif;" *ngIf="s.Code == code">{{s.Code}}</h2>
                     </div>
                     </div>
                     <div>
@@ -31,7 +31,7 @@
 
                     <!-- <?php $_SESSION['countQuestion'] = count($startQuiz) ?> -->
                     <!-- câu hỏi -->
-                    <form action="" method="POST">
+                    <form action="" method="POST" >
                         <!-- <input type="hidden" name="studentId" value="{{ $_SESSION['id'] }}" id="">
                         <input type="hidden" name="quizId" value="{{ $data->id }}" id=""> -->
                         <!-- @foreach ($startQuiz as $startQuiz) -->
@@ -53,9 +53,9 @@
                                     </ul>
                                 </div>
                             </div>
+                            <a routerLink="/quiz/{{code}}/ket-qua" routerLinkActive="active"><button type="submit" class="btn-endquiz" name="endQuiz">Hoàn thành</button></a><br>
 
                         <!-- @endforeach -->
-                        <button type="submit" class="btn-endquiz" name="endQuiz">Hoàn thành</button><br>
 
                     </form><br>
 

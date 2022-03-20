@@ -1,3 +1,4 @@
+import { FinalComponent } from './pages/final/final.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { SubjectComponent } from './pages/subject/subject.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'subject/:id', component: SubjectComponent },
-  { path: 'subject/:id/quiz/:id', component: QuizComponent },
+  { path: 'quiz/:id', component: QuizComponent },
+  { path: 'quiz/:id/ket-qua', component: FinalComponent },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 
