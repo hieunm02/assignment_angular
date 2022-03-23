@@ -12,7 +12,10 @@ export class SubjectAdminComponent implements OnInit {
   constructor(private router: ActivatedRoute, private subjectService: SubjectService) { }
 
   id: number = 0;
+  subjects: Array<any> = [
 
+  ]
+  
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.id = Number(par['id']);
@@ -29,8 +32,6 @@ export class SubjectAdminComponent implements OnInit {
       
     });
   }
-  subjects: Array<any> = [
 
-  ]
 
 }

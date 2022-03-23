@@ -1,3 +1,5 @@
+import { AnswerComponent } from './admin/answer/answer.component';
+import { QuestionComponent } from './admin/question/question.component';
 import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
 import { AddSubjectComponent } from './admin/add-subject/add-subject.component';
 import { SubjectAdminComponent } from './admin/subject-admin/subject-admin.component';
@@ -51,6 +53,14 @@ const routes: Routes = [
       {
         path: "mon-hoc/edit/:id",
         component: EditSubjectComponent
+      },
+      {
+        path: "question/:id",
+        component: QuestionComponent
+      },
+      {
+        path: "question/:code/answer/:id",
+        component: AnswerComponent
       },
     ]
   },

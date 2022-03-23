@@ -21,7 +21,8 @@ import { EditStudentComponent } from './admin/edit-student/edit-student.componen
 import { SubjectAdminComponent } from './admin/subject-admin/subject-admin.component';
 import { AddSubjectComponent } from './admin/add-subject/add-subject.component';
 import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
-import { QuizAdminComponent } from './admin/quiz-admin/quiz-admin.component';
+import { QuestionComponent } from './admin/question/question.component';
+import { AnswerComponent } from './admin/answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { QuizAdminComponent } from './admin/quiz-admin/quiz-admin.component';
     SubjectAdminComponent,
     AddSubjectComponent,
     EditSubjectComponent,
-    QuizAdminComponent,
+    QuestionComponent,
+    AnswerComponent,
   ],
   imports: [
     BrowserModule,
