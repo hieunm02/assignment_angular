@@ -1,5 +1,5 @@
+import { SubjectService } from './../../services/subject/subject.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,13 +7,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private subjectService: SubjectService) { }
+  keyword: string = "";
   ngOnInit(): void {
-    this.http.get<any>("http://localhost:3000/subjects")
-      .subscribe(data => {
-        this.subjects = data;
-      });
+    this.getSubject();
+  }
+  getSubject(searchKeyword: string =""){
+    this.subjectService.list(searchKeyword)
+    .subscribe(data => {
+      this.subjects = data;
+    });
+  }
+  search(){
+    this.getSubject(this.keyword);
   }
   subjects: Array<any> = [
 

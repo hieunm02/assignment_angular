@@ -153,10 +153,9 @@ main{
     padding: 0;
 }
 .list-question{
-    height: 50px;
+    height: 100px;
     width: 100%;
-    border-bottom-style: double;
-    border-color: red;
+
 }
 .list-question ul li a{
     color: red ;

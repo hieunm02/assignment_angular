@@ -40,13 +40,20 @@
                                     
 
                                     <ul>
-                                        <li><a class="startQuiz" id="">{{item.Text}}</a></li><br>
+                                        <li>
+                                            <div style="border-bottom-style: double;border-color: red;width: 1111px;">
+                                                <a class="startQuiz" id="">{{item.Text}}</a>
+                                            </div>
+                                        </li>
                                         <li>
                                             <!-- <input type="hidden" name="questionId[]" value="{{ $startQuiz->id }}" id=""> -->
                                             <!-- câu trả lời -->
                                             <!-- @foreach ($answer as $ans)  -->
                                                 <!-- <?php if ($startQuiz['id'] == $ans['question_id']) { ?> -->
-                                                    <input type="radio" name="" value="">{{item.Answers | json}}<br>
+                                                    <div *ngFor="let asw of item.Answers" style="height: auto;">
+                                                        <input  type="radio" name="" value=""> {{asw.Text}}
+                                                    </div>
+                                                    
                                                 <!-- <?php } ?>
                                             @endforeach -->
                                         </li>

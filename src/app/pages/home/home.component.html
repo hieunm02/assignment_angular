@@ -14,8 +14,19 @@
             <a routerLink="/" routerLinkActive="active"><img src="https://ap.poly.edu.vn/images/logo.png" alt="" class="logo"></a>
             <app-header></app-header>
         </header>
-
+        <!-- lấy ra 10 đáp án ngẫu nhiên -->
+        <!-- let arr = []
+        while(arr.length < 10){
+            let rand = Math.floor(Math.random() * 12)
+            if(!arr.includes(rand)){
+                arr.push(rand);
+            }
+        }
+        console.log(arr) -->
         <main style="padding: 10px;">
+            <div class="search" style="float: right;">
+                <input type="text" class="mb-2" placeholder="Tìm kiếm môn học" [(ngModel)]="keyword" (keyup)="search()">
+            </div>
                 <div class="product">
                 
                     <div class="product__item" *ngFor="let item of subjects">

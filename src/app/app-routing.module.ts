@@ -1,3 +1,6 @@
+import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
+import { AddSubjectComponent } from './admin/add-subject/add-subject.component';
+import { SubjectAdminComponent } from './admin/subject-admin/subject-admin.component';
 import { EditStudentComponent } from './admin/edit-student/edit-student.component';
 import { AddStudentComponent } from './admin/add-student/add-student.component';
 import { StudentComponent } from './admin/student/student.component';
@@ -36,6 +39,18 @@ const routes: Routes = [
       {
         path: "sinh-vien/edit/:id",
         component: EditStudentComponent
+      },
+      {
+        path: "mon-hoc",
+        component: SubjectAdminComponent
+      },
+      {
+        path: "mon-hoc/add",
+        component: AddSubjectComponent
+      },
+      {
+        path: "mon-hoc/edit/:id",
+        component: EditSubjectComponent
       },
     ]
   },

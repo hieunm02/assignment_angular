@@ -18,6 +18,10 @@ import { AddStudentComponent } from './admin/add-student/add-student.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenderPipe } from './pipes/gender/gender.pipe';
 import { EditStudentComponent } from './admin/edit-student/edit-student.component';
+import { SubjectAdminComponent } from './admin/subject-admin/subject-admin.component';
+import { AddSubjectComponent } from './admin/add-subject/add-subject.component';
+import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
+import { QuizAdminComponent } from './admin/quiz-admin/quiz-admin.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { EditStudentComponent } from './admin/edit-student/edit-student.componen
     AddStudentComponent,
     GenderPipe,
     EditStudentComponent,
+    SubjectAdminComponent,
+    AddSubjectComponent,
+    EditSubjectComponent,
+    QuizAdminComponent,
   ],
   imports: [
     BrowserModule,

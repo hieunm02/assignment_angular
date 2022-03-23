@@ -1,0 +1,27 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Mã môn học</th>
+            <th>Code</th>
+            <th>Tên môn học</th>
+            <th>Logo</th>
+            <th>Chi tiết</th>
+            <th>
+                <a routerLink="/admin/mon-hoc/add" class="btn btn-primary">Thêm</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of subjects">
+            <td>{{item.id}}</td>
+            <td>{{item.Code}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Logo}}</td>
+            <td><a href="">Chi tiết</a></td>
+            <td>
+                <a href="" class="btn btn-danger">Xóa</a>
+                <a [routerLink]="'/admin/mon-hoc/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

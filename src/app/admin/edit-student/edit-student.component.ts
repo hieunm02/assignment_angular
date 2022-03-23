@@ -17,7 +17,7 @@ export class EditStudentComponent implements OnInit {
 
     });
 
-    this.http.get<any>("http://localhost:3000/students/" + this.id)
+    this.http.get<any>("http://localhost:3000/students/"+this.id)
       .subscribe(data => {
         this.student = data;
         console.log(this.id);

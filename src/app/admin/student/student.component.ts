@@ -1,3 +1,4 @@
+import { StudentService } from './../../services/student/student.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  constructor(private router: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private studentService: StudentService) { }
 
   id: number = 0;
 
@@ -17,11 +18,13 @@ export class StudentComponent implements OnInit {
       this.id = Number(par['id']);
     });
 
-    this.http.get<any>("http://localhost:3000/students")
+    this.getStudent();
+    
+  }
+  getStudent(){
+    this.studentService.list()
       .subscribe(data => {
         this.students = data;
-        console.log(this.id);
-        
       });
   }
 
