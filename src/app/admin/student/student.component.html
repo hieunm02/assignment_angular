@@ -1,0 +1,32 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Họ và tên</th>
+            <th>Tên tài khoản</th>
+            <th>Email</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Học phí</th>
+            <th>
+                <a routerLink="/admin/sinh-vien/add" class="btn btn-primary">Thêm</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of students">
+            <td>{{item.id}}</td>
+            <td>{{item.fullname}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.gender | gender}}</td>
+            <td>{{item.birthday}}</td>
+            <td>{{item.schoolfee | currency:'VND':'symbol':'1.2'}}</td>
+            
+            <td>
+                <a href="" class="btn btn-danger">Xóa</a>
+                <a [routerLink]="'/admin/sinh-vien/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

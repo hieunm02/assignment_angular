@@ -20,7 +20,6 @@ export class SubjectComponent implements OnInit {
     this.http.get<any>("http://localhost:3000/subjects")
       .subscribe(data => {
         this.subjects = data;
-        console.log(this.id);
       });
   }
   subjects: Array<any> = [

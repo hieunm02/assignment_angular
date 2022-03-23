@@ -11,6 +11,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { SubjectComponent } from './pages/subject/subject.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { FinalComponent } from './pages/final/final.component';
+import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { StudentComponent } from './admin/student/student.component';
+import { AddStudentComponent } from './admin/add-student/add-student.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GenderPipe } from './pipes/gender/gender.pipe';
+import { EditStudentComponent } from './admin/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +29,18 @@ import { FinalComponent } from './pages/final/final.component';
     SubjectComponent,
     QuizComponent,
     FinalComponent,
+    AdminLayoutComponent,
+    DashboardComponent,
+    StudentComponent,
+    AddStudentComponent,
+    GenderPipe,
+    EditStudentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
