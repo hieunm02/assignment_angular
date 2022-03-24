@@ -12,24 +12,32 @@ export class StudentComponent implements OnInit {
   constructor(private router: ActivatedRoute, private studentService: StudentService) { }
 
   id: number = 0;
+  keyword: string = "";
+  students: Array<any> = [
 
+  ]
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.id = Number(par['id']);
     });
 
     this.getStudent();
-    
   }
-  getStudent(){
-    this.studentService.list()
+  getStudent(searchKeyword: string = ""){
+    this.studentService.list(searchKeyword)
       .subscribe(data => {
         this.students = data;
       });
   }
+  search(){
+    this.getStudent(this.keyword);
+  }
 
-  students: Array<any> = [
-
-  ]
+  remove(student: any){
+    this.studentService.remove(student.id)
+    .subscribe(data => {
+      this.students = this.students.filter(item => item.id != student.id)
+    })
+  }
 
 }

@@ -9,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditStudentComponent implements OnInit {
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
-
+  student: any = {
+    birthday: "",
+    email: "",
+    fullname: "",
+    gender: "",
+    id: "",
+    marks: "",
+    password: "",
+    schoolfee: "",
+    username: ""
+  }
   id: number = 0;
   ngOnInit(): void {
     this.router.params.subscribe(par => {
@@ -24,16 +34,9 @@ export class EditStudentComponent implements OnInit {
         console.log(this.student);
       });
   }
-  student: any = {
-    birthday: "",
-    email: "",
-    fullname: "",
-    gender: "",
-    id: "",
-    marks: "",
-    password: "",
-    schoolfee: "",
-    username: ""
+
+  edit(item: any){
+    this.student = {...item}
   }
   
 

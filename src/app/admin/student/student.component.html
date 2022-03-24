@@ -1,3 +1,6 @@
+<div class="search" style="float: right;">
+    <input type="text" class="mb-2 mt-2" placeholder="Mời nhập email sinh viên" [(ngModel)]="keyword" (keyup)="search()">
+</div>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -24,7 +27,7 @@
             <td>{{item.schoolfee | currency:'VND':'symbol':'1.2'}}</td>
             
             <td>
-                <a href="" class="btn btn-danger">Xóa</a>
+                <button (click)="remove(item)" class="btn btn-danger">Xóa</button>
                 <a [routerLink]="'/admin/sinh-vien/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
             </td>
         </tr>

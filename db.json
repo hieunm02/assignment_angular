@@ -1,4 +1,3 @@
-
 {
   "students": [
     {
@@ -22,7 +21,7 @@
       "birthday": "1985-10-11",
       "schoolfee": "2500000",
       "marks": {
-        "ADAV" : 9 
+        "ADAV": 9
       }
     },
     {
@@ -46,15 +45,6 @@
       "schoolfee": "11000",
       "marks": "8",
       "id": 4
-    },
-    {
-      "fullname": "thienth",
-      "username": "thienth",
-      "password": "123456",
-      "gender": "true",
-      "birthday": "1990-12-31T17:00:00.000Z",
-      "schoolfee": 100,
-      "id": 5
     }
   ],
   "subjects": [
@@ -62,7 +52,7 @@
       "id": 1,
       "Code": "ADAV",
       "Name": "Lập trình Android nâng cao",
-      "Logo": "ADAV.jpg"
+      "Logo": "https://media-kyna.cdn.vccloud.vn/uploads/courses/633/img/image_url-1595227061.jpg"
     },
     {
       "id": 2,
@@ -31393,8 +31383,7 @@
           "Text": "# #"
         },
         {
-   
-       "Id": 107285,
+          "Id": 107285,
           "Text": "/* /*"
         },
         {

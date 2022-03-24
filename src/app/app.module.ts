@@ -23,6 +23,9 @@ import { AddSubjectComponent } from './admin/add-subject/add-subject.component';
 import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
 import { QuestionComponent } from './admin/question/question.component';
 import { AnswerComponent } from './admin/answer/answer.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -51,9 +54,12 @@ import { AnswerComponent } from './admin/answer/answer.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

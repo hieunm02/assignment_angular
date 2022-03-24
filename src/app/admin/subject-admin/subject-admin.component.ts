@@ -12,6 +12,8 @@ export class SubjectAdminComponent implements OnInit {
   constructor(private router: ActivatedRoute, private subjectService: SubjectService) { }
 
   id: number = 0;
+  keyword: string = "";
+
   subjects: Array<any> = [
 
   ]
@@ -24,13 +26,17 @@ export class SubjectAdminComponent implements OnInit {
 
   }
 
-  getSubject(){
-    this.subjectService.list()
+  getSubject(searchKeyword: string = ""){
+    this.subjectService.list(searchKeyword)
     .subscribe(data => {
       this.subjects = data;
       console.log(this.id);
       
     });
+  }
+
+  search(){
+    this.getSubject(this.keyword);
   }
 
 

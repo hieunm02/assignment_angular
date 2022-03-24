@@ -9,10 +9,13 @@ export class HomeComponent implements OnInit {
 
   constructor(private subjectService: SubjectService) { }
   keyword: string = "";
+  subjects: Array<any> = [
+
+  ]
   ngOnInit(): void {
     this.getSubject();
   }
-  getSubject(searchKeyword: string =""){
+  getSubject(searchKeyword: string = ""){
     this.subjectService.list(searchKeyword)
     .subscribe(data => {
       this.subjects = data;
@@ -21,8 +24,6 @@ export class HomeComponent implements OnInit {
   search(){
     this.getSubject(this.keyword);
   }
-  subjects: Array<any> = [
-
-  ]
+ 
 
 }
