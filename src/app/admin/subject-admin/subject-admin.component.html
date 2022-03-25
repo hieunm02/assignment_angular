@@ -20,7 +20,7 @@
             <td>{{item.Logo}}</td>
             <td><a [routerLink]="'/admin/question/' + item.Code">{{item.Code}}</a></td>
             <td>
-                <a href="" class="btn btn-danger">Xóa</a>
+                <button (click)="remove(item)" class="btn btn-danger">Xóa</button>
                 <a [routerLink]="'/admin/mon-hoc/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
             </td>
         </tr>

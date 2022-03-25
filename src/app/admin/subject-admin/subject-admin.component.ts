@@ -39,5 +39,12 @@ export class SubjectAdminComponent implements OnInit {
     this.getSubject(this.keyword);
   }
 
+  remove(subject: any){
+    this.subjectService.remove(subject.id)
+    .subscribe(data => {
+      this.subjects = this.subjects.filter(item => item.id != subject.id);
+    })
+  }
+
 
 }
