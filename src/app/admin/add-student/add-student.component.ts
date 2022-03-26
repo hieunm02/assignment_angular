@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
 
@@ -20,6 +21,16 @@ export class AddStudentComponent implements OnInit {
     schoolfee: 0,
     marks: 0,
   }
+
+  addForm: FormGroup = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    fullname: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    gender: new FormControl('', Validators.required),
+    birthday: new FormControl('', Validators.required),
+    schoolfee: new FormControl('', Validators.required),
+  })
 
   constructor(private studentService: StudentService) { }
   ngOnInit(): void {

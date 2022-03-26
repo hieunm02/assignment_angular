@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class QuizComponent implements OnInit {
 
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
-  
+
   code: string = '';
   questions: Array<any> = [
 
@@ -22,17 +22,11 @@ export class QuizComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    // while(this.questions.length < 10){
-    //   let rand = Math.floor(Math.random() * 12)
-    //   if(!this.questions.includes(rand)){
-    //       this.questions.push(rand);
-    //   }
-    // }
-    
+
     this.router.params.subscribe(par => {
       this.code = String(par['id']);
     });
-    
+
     this.getQuestion();
 
 
@@ -43,11 +37,14 @@ export class QuizComponent implements OnInit {
 
 
   }
-  getQuestion(_limit: number = 10){
-    this.http.get<any>("http://localhost:3000/" + this.code + "/?_limit=" + _limit + "&_sort=id&_order=desc")
-    .subscribe(data => {
-      this.questions = data;
-      console.log(this.questions)
+  getQuestion(_limit: number = 10) {
+    this.http.get<any>("http://localhost:3000/" + this.code)
+      .subscribe(data => {
+        var arr = data;
+        for (let i = 1; i <= 10; i++) {
+          var randArr = arr[Math.floor(Math.random() * arr.length)];
+          this.questions.push(randArr);
+        }
       });
   }
 

@@ -1,20 +1,31 @@
 <div class="container-fluid">
     <div class="col-6 offset-3 mt-5">
+        <form action="" [formGroup]="addForm">
             <div class="form-group mt-3">
-                <label for="">Code</label>
-                <input type="text" class="form-control" [(ngModel)]="subjectData.Code">
+                <label for="">Tên quiz</label>
+                <input type="text" class="form-control" [(ngModel)]="subjectData.Code" formControlName="Code">
+                <div *ngIf="addForm.controls['Code'].errors && addForm.controls['Code'].touched || addForm.controls['Code'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['Code'].hasError('required')">Hãy nhập tên quiz</span>
+                </div>
             </div>
             <div class="form-group mt-3">
                 <label for="">Tên môn học</label>
-                <input type="text" class="form-control" [(ngModel)]="subjectData.Name">
+                <input type="text" class="form-control" [(ngModel)]="subjectData.Name" formControlName="Name">
+                <div *ngIf="addForm.controls['Name'].errors && addForm.controls['Name'].touched || addForm.controls['Name'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['Name'].hasError('required')">Hãy nhập tên môn học</span>
+                </div>
             </div> 
             <div class="form-group mt-3">
                 <label for="">Logo</label>
-                <input type="file" class="form-control" [(ngModel)]="subjectData.Logo">
+                <input type="text" class="form-control" [(ngModel)]="subjectData.Logo" formControlName="Logo">
+                <div *ngIf="addForm.controls['Logo'].errors && addForm.controls['Logo'].touched || addForm.controls['Logo'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['Logo'].hasError('required')">Hãy nhập logo</span>
+                </div>
             </div>
            
             <div>
                 <button (click)="addSubject()" class="btn btn-primary mt-3">Thêm</button>
             </div>
+        </form>
     </div>
 </div>

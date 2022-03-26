@@ -153,7 +153,7 @@ main{
     padding: 0;
 }
 .list-question{
-    height: 100px;
+    height: 200px;
     width: 100%;
 
 }
@@ -171,7 +171,7 @@ main{
 }
 .main{
     width: 100%;
-    height: auto;
+    height: 3200px;
     border: 1px solid lightgrey;
     padding: 10px 40px;
 }
@@ -214,5 +214,14 @@ main{
 .btn-endquiz:hover{
     cursor: pointer;
 }
-
-
+.asw{
+    height: auto;
+    margin: 3px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+.asw:hover{
+    border: 1px solid lightblue;
+    box-shadow: 1px 1px 1px 1px rgb(36, 174, 216);
+}

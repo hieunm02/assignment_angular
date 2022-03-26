@@ -34,10 +34,13 @@ export class StudentComponent implements OnInit {
   }
 
   remove(student: any){
+    const confilm = window.confirm('Bạn có chắc muốn xóa')
+    if(confilm){
     this.studentService.remove(student.id)
     .subscribe(data => {
       this.students = this.students.filter(item => item.id != student.id)
     })
+  }
   }
 
 }

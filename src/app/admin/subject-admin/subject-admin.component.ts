@@ -40,10 +40,13 @@ export class SubjectAdminComponent implements OnInit {
   }
 
   remove(subject: any){
+    const confilm = window.confirm('Bạn có chắc muốn xóa')
+    if(confilm){
     this.subjectService.remove(subject.id)
     .subscribe(data => {
       this.subjects = this.subjects.filter(item => item.id != subject.id);
     })
+  }
   }
 
 

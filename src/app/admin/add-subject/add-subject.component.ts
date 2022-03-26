@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SubjectService } from './../../services/subject/subject.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,6 +16,13 @@ export class AddSubjectComponent implements OnInit {
     Name: "",
     Logo: "",
   }
+  
+  addForm: FormGroup = new FormGroup({
+    Code: new FormControl('', Validators.required),
+    Name: new FormControl('', Validators.required),
+    Logo: new FormControl('', Validators.required),
+
+  })
   constructor(private subjectService: SubjectService) { }
 
   ngOnInit(): void {

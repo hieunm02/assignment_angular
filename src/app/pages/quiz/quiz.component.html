@@ -41,7 +41,7 @@
 
                                     <ul>
                                         <li>
-                                            <div style="border-bottom-style: double;border-color: red;width: 1111px;">
+                                            <div style="border-bottom-style: double;border-color: red;width: 1111px; ">
                                                 <a class="startQuiz" id="">{{item.Text}}</a>
                                             </div>
                                         </li>
@@ -50,8 +50,8 @@
                                             <!-- câu trả lời -->
                                             <!-- @foreach ($answer as $ans)  -->
                                                 <!-- <?php if ($startQuiz['id'] == $ans['question_id']) { ?> -->
-                                                    <div *ngFor="let asw of item.Answers" style="height: auto;">
-                                                        <input  type="radio" name="{{item.Id}}" value="">{{asw.Text}}
+                                                    <div *ngFor="let asw of item.Answers" class="asw">
+                                                        <input class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="">{{asw.Text}}
                                                     </div>
                                                     
                                                 <!-- <?php } ?>
