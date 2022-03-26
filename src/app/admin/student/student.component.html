@@ -4,7 +4,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Mã sinh viên</th>
+            <th (click)="sort('id')">Mã sinh viên <img src="https://img.icons8.com/ios-glyphs/344/sort.png" width="15px" alt=""></th>
             <th>Họ và tên</th>
             <th>Tên tài khoản</th>
             <th>Email</th>
@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of students | paginate: {itemsPerPage:5,currentPage:p};">
+        <tr *ngFor="let item of students | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p};">
             <td>{{item.id}}</td>
             <td>{{item.fullname}}</td>
             <td>{{item.username}}</td>
