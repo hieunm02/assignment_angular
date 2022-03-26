@@ -17,6 +17,7 @@ export class SubjectAdminComponent implements OnInit {
   subjects: Array<any> = [
 
   ]
+  p: number = 1;
   
   ngOnInit(): void {
     this.router.params.subscribe(par => {

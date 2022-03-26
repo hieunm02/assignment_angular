@@ -10,9 +10,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of questions">
-            <td>{{item.Id}}</td>
-            <td style="width: 1200px;">{{item.Text}}</td>
+        <tr *ngFor="let item of questions | paginate: {itemsPerPage:5,currentPage:p};">
+            <td style="width: 500px;">{{item.Id}}</td>
+            <td style="width: 500px;">{{item.Text}}</td>
             <td><a [routerLink]="'/admin/question/' + code + '/answer/' + item.Id">Chi tiết</a></td>
             <td>
                 <a href="" class="btn btn-danger">Xóa</a>
@@ -20,4 +20,5 @@
             </td>
         </tr>
     </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </table>

@@ -16,6 +16,7 @@ export class StudentComponent implements OnInit {
   students: Array<any> = [
 
   ]
+  p:number = 1;
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.id = Number(par['id']);

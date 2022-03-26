@@ -15,6 +15,7 @@ export class QuestionComponent implements OnInit {
   questions: Array<any> = [
 
   ]
+  p:number = 1;
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.code = String(par['id']);
