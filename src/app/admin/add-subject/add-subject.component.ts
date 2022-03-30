@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SubjectService } from './../../services/subject/subject.service';
+import { SubjectService } from '../../services/subject/subject.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -23,7 +24,7 @@ export class AddSubjectComponent implements OnInit {
     Logo: new FormControl('', Validators.required),
 
   })
-  constructor(private subjectService: SubjectService) { }
+  constructor(private subjectService: SubjectService, private router: Router) { }
 
   ngOnInit(): void {
     this.getSubject();
@@ -44,7 +45,8 @@ export class AddSubjectComponent implements OnInit {
       this.listSubject.push(newsubject);
     });
     setTimeout(() => {
-      document.location.href = 'http://localhost:4200/admin/mon-hoc';
+      this.router.navigate(['/admin/mon-hoc']);
+
     }, 1000);
   }
 }

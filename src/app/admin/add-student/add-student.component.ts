@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
@@ -32,7 +33,7 @@ export class AddStudentComponent implements OnInit {
     schoolfee: new FormControl('', Validators.required),
   })
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private router: Router) { }
   ngOnInit(): void {
     this.getStudent();
   }
@@ -50,7 +51,8 @@ export class AddStudentComponent implements OnInit {
       this.listStudents.push(newStudent);
     });
     setTimeout(() => {
-    document.location.href = 'http://localhost:4200/admin/sinh-vien'
+      this.router.navigate(['/admin/sinh-vien']);
+
       
     }, 1000);
   }

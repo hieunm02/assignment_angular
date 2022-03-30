@@ -1,3 +1,4 @@
+import { AuthGuard } from './helpers/auth.guard';
 import { AnswerComponent } from './admin/answer/answer.component';
 import { QuestionComponent } from './admin/question/question.component';
 import { EditSubjectComponent } from './admin/edit-subject/edit-subject.component';
@@ -18,11 +19,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,canActivate: [AuthGuard]  },
   { path: 'login', component: LoginComponent },
-  { path: 'subject/:id', component: SubjectComponent },
-  { path: 'quiz/:id', component: QuizComponent },
-  { path: 'quiz/:id/ket-qua', component: FinalComponent },
+  { path: 'subject/:id', component: SubjectComponent,canActivate: [AuthGuard] },
+  { path: 'quiz/:id', component: QuizComponent,canActivate: [AuthGuard]  },
+  { path: 'quiz/:id/ket-qua', component: FinalComponent,canActivate: [AuthGuard]  },
   { path: 'admin', 
     component: AdminLayoutComponent,
     children: [

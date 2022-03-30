@@ -6,11 +6,9 @@
         <tr>
             <th (click)="sort('id')">Mã sinh viên <img src="https://img.icons8.com/ios-glyphs/344/sort.png" width="15px" alt=""></th>
             <th>Họ và tên</th>
-            <th>Tên tài khoản</th>
             <th>Email</th>
-            <th>Giới tính</th>
+            <!-- <th>Giới tính</th> -->
             <th>Ngày sinh</th>
-            <th>Học phí</th>
             <th>
                 <a routerLink="/admin/sinh-vien/add" class="btn btn-primary">Thêm</a>
             </th>
@@ -19,12 +17,11 @@
     <tbody>
         <tr *ngFor="let item of students | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p};">
             <td>{{item.id}}</td>
-            <td>{{item.fullname}}</td>
-            <td>{{item.username}}</td>
+            <td>{{item.name}}</td>
             <td>{{item.email}}</td>
-            <td>{{item.gender | gender}}</td>
+            <!-- <td>{{item.gender | gender}}</td> -->
             <td>{{item.birthday}}</td>
-            <td>{{item.schoolfee | currency:'VND':'symbol':'1.2'}}</td>
+            <!-- <td>{{item.schoolfee | currency:'VND':'symbol':'1.2'}}</td> -->
             
             <td>
                 <button (click)="remove(item)" class="btn btn-danger">Xóa</button>

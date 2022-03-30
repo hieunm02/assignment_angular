@@ -10,13 +10,13 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
   list(searchKeyword: string = ""): Observable<any>{
-    return this.http.get<any>(`${environment.student_api}?email_like=${searchKeyword}`);
+    return this.http.get<any>(`${environment.user_api}?email_like=${searchKeyword}`);
   };
   addNew(data: any): Observable<any>{
-    return this.http.post<any>(environment.student_api, {...data});
+    return this.http.post<any>(environment.user_api, {...data});
   }
   remove(id: string = ""): Observable<any>{
-    return this.http.delete<any>(`${environment.student_api}/` + id);
+    return this.http.delete<any>(`${environment.user_api}/` + id);
   }
 
 }

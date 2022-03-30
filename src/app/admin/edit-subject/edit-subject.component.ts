@@ -9,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditSubjectComponent implements OnInit {
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
-
+  subject: any = {
+    id: "",
+    Code: "",
+    Name: "",
+    Logo: "",
+  }
   id: number = 0;
   ngOnInit(): void {
     this.router.params.subscribe(par => {
@@ -23,11 +28,6 @@ export class EditSubjectComponent implements OnInit {
         console.log(this.subject);
       });
   }
-  subject: any = {
-    id: "",
-    Code: "",
-    Name: "",
-    Logo: "",
-  }
+
 
 }

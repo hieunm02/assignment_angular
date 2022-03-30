@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -63,9 +65,26 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ToastrModule.forRoot(),
     NgxPaginationModule,
     Ng2OrderModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              environment.GOOGLE_CLIENT_ID
+            )
+          }
+        ],
+
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

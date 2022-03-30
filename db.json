@@ -1,50 +1,37 @@
 {
-  "students": [
+  "users": [
     {
       "id": 1,
-      "username": "teonv",
-      "password": "iloveyou",
-      "fullname": "Nguyễn Văn Tèo",
-      "email": "teonv@fpt.edu.vn",
-      "gender": "true",
+      "name": "Nguyễn Minh Hiếu PH 1 7 4 0 7",
+      "email": "hieunmph17407@fpt.edu.vn",
+      "avartar": "https://lh3.googleusercontent.com/a/AATXAJxfflPVkUV1RUnkNtfaY8ZZ4xejDjpjurOjnC4z=s96-c",
       "birthday": "1995-12-21",
-      "schoolfee": "1500000",
-      "marks": "0"
+      "marks": [],
+      "googleId": "114892574372145460190",
+      "authToken": "ya29.A0ARrdaM9e2PpLF-9wChqpsMhhF1kciuKGE_DZjrABEKUPaohLEUg1ZcY-7CaiSN77yjbNLx0SR9epvPQteJdgdRLNNLfQ6eieRkoDy0rxL1o5wvMbpB1JiYOrN6QS1lOhlwUQ3r77eljvrHkv_n3_VgdDp5sv",
+      "roles": [
+        {
+          "name": "admin"
+        },
+        {
+          "name": "member"
+        }
+      ]
     },
     {
       "id": 2,
-      "username": "pheonv",
-      "password": "iloveyou",
-      "fullname": "Nguyễn Văn Chí Phèo",
-      "email": "pheonv@fpt.edu.vn",
-      "gender": "true",
-      "birthday": "1985-10-11",
-      "schoolfee": "2500000",
-      "marks": {
-        "ADAV": 9
-      }
-    },
-    {
-      "id": 3,
-      "username": "nopt",
-      "password": "iloveyou",
-      "fullname": "Phạm Thị Nở",
-      "email": "nopt@fpt.edu.vn",
-      "gender": "false",
-      "birthday": "1993-05-15",
-      "schoolfee": "2000000",
-      "marks": "0"
-    },
-    {
-      "username": "thienth",
-      "password": "123456",
-      "fullname": "trần hữu thiện",
-      "email": "thienth@gmail.com",
-      "gender": "true",
-      "birthday": "1991-01-01",
-      "schoolfee": "11000",
-      "marks": "8",
-      "id": 4
+      "name": "Nguyễn Minh Hiếu",
+      "email": "nguyenminhhieu2002ptpt@gmail.com",
+      "avartar": "https://lh3.googleusercontent.com/a-/AOh14GiJicN1S1u28wfefHn3MsKzHmYBDZAkSf_Ba8vH=s96-c",
+      "birthday": "1995-12-21",
+      "marks": [],
+      "googleId": "100230343664855769898",
+      "authToken": "ya29.A0ARrdaM_4MIqHnk8WKsXgIdkTS4x4VHRgW1WG_l0moVsq3sit8FNwBS1e-RchLj5k_Ua2JbKtJx3sol2sUOynMZacql9SDqbHEucLtcOe7j3-N3kIclAN6WDahDDaylAHxUCroyZkMQO5SCQylYD86jknAqBh",
+      "roles": [
+        {
+          "name": "member"
+        }
+      ]
     }
   ],
   "subjects": [

@@ -42,7 +42,7 @@
 
                         <div class="info">
                             <h4>Mã môn: {{item.id}}</h4>
-                            <a href="" class="info-name">{{item.Name}}</a>
+                            <a [routerLink]="'subject/' + item.id" routerLinkActive="active" class="info-name">{{item.Name}}</a>
                         </div>
                     </div>
             </div>

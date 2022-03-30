@@ -37,7 +37,7 @@ export class QuizComponent implements OnInit {
 
 
   }
-  getQuestion(_limit: number = 10) {
+  getQuestion() {
     this.http.get<any>("http://localhost:3000/" + this.code)
       .subscribe(data => {
         var arr = data;

@@ -1,4 +1,4 @@
-import { SubjectService } from './../../services/subject/subject.service';
+import { SubjectService } from '../../services/subject/subject.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
