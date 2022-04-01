@@ -63,12 +63,10 @@ nav ul li a{
     height: 160px;
     box-sizing: border-box;
     overflow: hidden;
-    /* position: relative; */
 }
 .image{
     width: 100%;
     position: relative;
-
 }
 .info{
     padding: 10px;

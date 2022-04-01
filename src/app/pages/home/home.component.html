@@ -30,20 +30,22 @@
                 <div class="product">
                 
                     <div class="product__item" *ngFor="let item of subjects">
+                        <a [routerLink]="'subject/' + item.id" routerLinkActive="active" style="text-decoration: none; color: black;">
                         <div class="product-header">
                             <div class="product-button">
                                 <a [routerLink]="'subject/' + item.id" routerLinkActive="active"><button type="submit">Làm Quiz</button></a>
                             </div>
                             <div class="product-image">
-                                <img src="https://cms.poly.edu.vn/asset-v1:FPOLY+COM107+2019_T09+type@asset+block@nganh-cong-nghe-thong-tin-hoc-nhung-mon-gi-1.jpg" alt="" class="image">
+                                <img [src]="'/assets/logos/logos/' + item.Logo" alt="" class="image">
                             </div>
 
                         </div>
-
                         <div class="info">
                             <h4>Mã môn: {{item.id}}</h4>
                             <a [routerLink]="'subject/' + item.id" routerLinkActive="active" class="info-name">{{item.Name}}</a>
                         </div>
+                    </a>
+                    
                     </div>
             </div>
         </main>

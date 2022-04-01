@@ -51,7 +51,7 @@
                                             <!-- @foreach ($answer as $ans)  -->
                                                 <!-- <?php if ($startQuiz['id'] == $ans['question_id']) { ?> -->
                                                     <div *ngFor="let asw of item.Answers" class="asw">
-                                                        <input class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="">{{asw.Text}}
+                                                        <input class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="{{ asw.Id }}"  >{{asw.Text}}
                                                     </div>
                                                     
                                                 <!-- <?php } ?>
@@ -71,7 +71,6 @@
                 </div>
 
             </div>
-
         </main>
 
     </div>

@@ -66,7 +66,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     NgxPaginationModule,
     Ng2OrderModule,
     FontAwesomeModule,
-    SocialLoginModule
+    SocialLoginModule,
   ],
   providers: [
     {

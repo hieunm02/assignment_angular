@@ -21,6 +21,7 @@ export class QuizComponent implements OnInit {
 
   ]
 
+  public answers: number[] = [];
   ngOnInit(): void {
 
     this.router.params.subscribe(par => {
