@@ -6,7 +6,16 @@
       "email": "hieunmph17407@fpt.edu.vn",
       "avartar": "https://lh3.googleusercontent.com/a/AATXAJxfflPVkUV1RUnkNtfaY8ZZ4xejDjpjurOjnC4z=s96-c",
       "birthday": "1995-12-21",
-      "marks": [],
+      "marks": [
+        {
+          "subject": "ADAV",
+          "score": 4
+        },
+        {
+          "subject": "ADBS",
+          "score": 1
+        }
+      ],
       "googleId": "114892574372145460190",
       "authToken": "ya29.A0ARrdaM9e2PpLF-9wChqpsMhhF1kciuKGE_DZjrABEKUPaohLEUg1ZcY-7CaiSN77yjbNLx0SR9epvPQteJdgdRLNNLfQ6eieRkoDy0rxL1o5wvMbpB1JiYOrN6QS1lOhlwUQ3r77eljvrHkv_n3_VgdDp5sv",
       "roles": [

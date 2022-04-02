@@ -1,4 +1,4 @@
-import { Observable, map } from 'rxjs';
+import { Observable, map, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthServiceService {
-
+  loggedInUser: BehaviorSubject<any> = new BehaviorSubject(JSON.parse(localStorage.getItem('login_user') || "{}"));
   constructor(private http: HttpClient, private router: Router) { }
+  
   login(email: string, googleId: String): Observable<any>{
     return this.http.get<any>(`${environment.user_api}?email=${email}&googleId=${googleId}`)
     .pipe(

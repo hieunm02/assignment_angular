@@ -10,13 +10,6 @@
                 </div>
             </div>
             <div class="form-group mt-3">
-                <label for="">Tên tài khoản</label>
-                <input type="text" class="form-control" [(ngModel)]="studentData.username" formControlName="username">
-                <div *ngIf="addForm.controls['username'].errors && addForm.controls['username'].touched || addForm.controls['username'].dirty"> 
-                    <span class="text-danger" *ngIf="addForm.controls['username'].hasError('required')">Hãy nhập tài khoản</span>
-                </div>
-            </div> 
-            <div class="form-group mt-3">
                 <label for="">Email</label>
                 <input type="text" class="form-control" [(ngModel)]="studentData.email" formControlName="email">
                 <div *ngIf="addForm.controls['email'].errors && addForm.controls['email'].touched || addForm.controls['email'].dirty"> 
@@ -56,7 +49,7 @@
                 </div>
             </div>
             <div>
-                <button (click)="addStudent()" class="btn btn-primary mt-3">Thêm</button>
+                <button [disabled]="addForm.invalid" (click)="addStudent()" class="btn btn-primary mt-3" >Thêm</button>
             </div>
         </form>
     </div>

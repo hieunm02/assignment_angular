@@ -29,41 +29,32 @@
                         <!-- <h2>Thời gian làm bài: <span id="time">{{ $data['duration_minutes'] }} </span> Phút</h2> -->
                     </div>
 
-                    <!-- <?php $_SESSION['countQuestion'] = count($startQuiz) ?> -->
-                    <!-- câu hỏi -->
+        
                     <form action="" method="POST" >
-                        <!-- <input type="hidden" name="studentId" value="{{ $_SESSION['id'] }}" id="">
-                        <input type="hidden" name="quizId" value="{{ $data->id }}" id=""> -->
-                        <!-- @foreach ($startQuiz as $startQuiz) -->
-                            <div class="question" *ngFor="let item of questions">
+           
+                            <div class="question" *ngFor="let item of questions; let i = index">
                                 <div class="list-question">
                                     
 
                                     <ul>
                                         <li>
                                             <div style="border-bottom-style: double;border-color: red;width: 1111px; ">
-                                                <a class="startQuiz" id="">{{item.Text}}</a>
+                                                <a class="startQuiz" id="" style="text-transform: lowercase;">Câu hỏi {{i + 1}} : {{item.Text}}</a>
                                             </div>
                                         </li>
                                         <li>
-                                            <!-- <input type="hidden" name="questionId[]" value="{{ $startQuiz->id }}" id=""> -->
-                                            <!-- câu trả lời -->
-                                            <!-- @foreach ($answer as $ans)  -->
-                                                <!-- <?php if ($startQuiz['id'] == $ans['question_id']) { ?> -->
+                                           
                                                     <div *ngFor="let asw of item.Answers" class="asw">
-                                                        <input class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="{{ asw.Id }}"  >{{asw.Text}}
+                                                        <input (change)="selectAnswer(item.Id,asw.Id)" id="asw_{{asw.Id}}" class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="{{ asw.Id }}"  >
+                                                        <label for="asw_{{asw.Id}}">{{asw.Text}}</label>
                                                     </div>
-                                                    
-                                                <!-- <?php } ?>
-                                            @endforeach -->
+                            
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <!-- <a routerLink="/quiz/{{code}}/ket-qua" routerLinkActive="active"></a><br> -->
-                            <button type="submit" class="btn-endquiz" name="endQuiz">Hoàn thành</button>
-
-                        <!-- @endforeach -->
+                            <!-- <a routerLink="/quiz/{{code}}/ket-qua" routerLinkActive="active"> -->
+                            <button (click)="submitExcercise()" type="submit" class="btn-endquiz" name="endQuiz" >Hoàn thành</button>
 
                     </form><br>
 
