@@ -12,12 +12,18 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthServiceService, private http: HttpClient) { }
 
   nameUser: string = "";
+
+  user: any
   ngOnInit(): void {
+    this.getUser();
   }
 
   getUser(){
-    this.http.get<any>("http://localhost:3000/users")
+    const name:string|any = localStorage.getItem('login_user') ;
+    this.user= JSON.parse(name).name;
+    console.log(this.user);
   }
+
   logout(): void {
     this.authService.logout();
   }

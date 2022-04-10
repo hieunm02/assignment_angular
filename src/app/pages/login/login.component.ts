@@ -10,13 +10,6 @@ import { AuthServiceService } from './../../services/auth/auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  // loginForm: FormGroup = new FormGroup({
-  //   email: new FormControl('',[
-  //     Validators.required,
-  //     Validators.email
-  //   ]),
-  //   password: new FormControl('', Validators.required),
-  // })
   constructor(private socialService: SocialAuthService, private authService: AuthServiceService) { }
 
   ngOnInit(): void {
@@ -33,9 +26,5 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  // submitForm(){
-  //   console.log(this.loginForm.value);
-  //   return false;
-    
-  // }
+
 }

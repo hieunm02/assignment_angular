@@ -1,0 +1,9 @@
+
+    <div *ngFor="let item of student" class="container mt-5 lh-5" >
+        <div *ngIf="item.id == id" style="border-style: double;padding: 20px;">
+        <div *ngFor="let mark of item.marks" style="font-weight: bold;">
+            Mã môn học : {{mark.subject}} -> Điểm : <span [ngClass]="{'diem-liet': mark.score < 5, 'diem-dat': mark.score >=5}">{{mark.score}}</span>
+            <a href="" style="float: right;">Reset</a>
+    </div>
+</div>
+</div>

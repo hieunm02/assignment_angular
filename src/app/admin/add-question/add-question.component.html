@@ -1,0 +1,34 @@
+
+<div class="container-fluid">
+    <div class="col-6 offset-3 mt-5">
+        <form action="" [formGroup]="addForm" >
+            <div class="form-group mt-3" >
+                <label for="">Câu hỏi</label>
+                <input type="text" class="form-control" [(ngModel)]="questionData.Text" formControlName="Text">
+                <div style="width: 20%;" *ngIf="addForm.controls['Text'].errors && addForm.controls['Text'].touched || addForm.controls['Text'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['Text'].hasError('required')">Hãy nhập câu hỏi</span>
+                </div>
+            </div>
+
+            <button  (click)="addAnswer()"  class="btn btn-warning float-end mt-3 mb-3">
+                Thêm đáp án
+            </button>
+            <div class="form-group mt-3" *ngFor="let na of newAnswer; let i = index">
+                <div *ngFor="let asw of questionData.Answers ">
+                <label for="">Đáp án </label>
+                <input type="text" class="form-control" [(ngModel)]="asw.Text"  name="na" >
+                <input type="radio" class="form-check-input me-2" name="" value="0">Đúng | 
+                <input type="radio" class="form-check-input me-2" name="" value="1">Sai
+                <button  (click)="removeAnswer(i)" class="btn btn-danger float-end mt-3">
+                    Xóa đáp án
+                </button>
+            </div>
+            </div>
+            
+
+            <div>
+                <button [disabled]="addForm.invalid" (click)="addQuestion()" class="btn btn-primary mt-5" >Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>

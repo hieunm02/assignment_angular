@@ -26,7 +26,6 @@
                     </div>
                     </div>
                     <div>
-                        <!-- <h2>Thời gian làm bài: <span id="time">{{ $data['duration_minutes'] }} </span> Phút</h2> -->
                     </div>
 
         
@@ -39,14 +38,14 @@
                                     <ul>
                                         <li>
                                             <div style="border-bottom-style: double;border-color: red;width: 1111px; ">
-                                                <a class="startQuiz" id="" style="text-transform: lowercase;">Câu hỏi {{i + 1}} : {{item.Text}}</a>
+                                                <a class="startQuiz" id="" style="text-transform: capitalize;">Câu hỏi {{i + 1}} : {{item.Text}}</a>
                                             </div>
                                         </li>
                                         <li>
                                            
                                                     <div *ngFor="let asw of item.Answers" class="asw">
-                                                        <input (change)="selectAnswer(item.Id,asw.Id)" id="asw_{{asw.Id}}" class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.Id}}" value="{{ asw.Id }}"  >
-                                                        <label for="asw_{{asw.Id}}">{{asw.Text}}</label>
+                                                        <input (change)="selectAnswer(item.id,asw.id)" id="asw_{{asw.id}}" class="form-check-input" style="margin-right: 3px;margin-left: 3px;" type="radio" name="{{item.id}}" value="{{ asw.id }}"  >
+                                                        <label for="asw_{{asw.id}}">{{asw.Text}}</label>
                                                     </div>
                             
                                         </li>
@@ -55,6 +54,7 @@
                             </div>
                             <!-- <a routerLink="/quiz/{{code}}/ket-qua" routerLinkActive="active"> -->
                             <button (click)="submitExcercise()" type="submit" class="btn-endquiz" name="endQuiz" >Hoàn thành</button>
+                            <span style="float: right;margin-top: 50px;font-weight: bold;" >Điểm của bạn là : <span [ngClass]="{'diem-liet': percentCorect < '5', 'diem-dat': percentCorect >= '5'}">{{percentCorect}}</span></span>
 
                     </form><br>
                    
@@ -64,31 +64,7 @@
         </main>
 
     </div>
-    <script>
-        function startTimer(duration, display) {
-            var timer = duration,
-                minutes, seconds;
-            setInterval(function() {
-                minutes = parseInt(timer / 60, 10)
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-
-        window.onload = function() {
-            var fiveMinutes = 60 * "<?= $data['duration_minutes']; ?>",
-                display = document.querySelector('#time');
-            startTimer(fiveMinutes, display);
-        };
-    </script>
+    
 </body>
 
 </html>

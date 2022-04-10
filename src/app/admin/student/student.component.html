@@ -7,8 +7,8 @@
             <th (click)="sort('id')">Mã sinh viên <img src="https://img.icons8.com/ios-glyphs/344/sort.png" width="15px" alt=""></th>
             <th>Họ và tên</th>
             <th>Email</th>
-            <!-- <th>Giới tính</th> -->
             <th>Ngày sinh</th>
+            <th>Bảng điểm</th>
             <th>
                 <a routerLink="/admin/sinh-vien/add" class="btn btn-primary">Thêm</a>
             </th>
@@ -19,10 +19,8 @@
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.email}}</td>
-            <!-- <td>{{item.gender | gender}}</td> -->
             <td>{{item.birthday}}</td>
-            <!-- <td>{{item.schoolfee | currency:'VND':'symbol':'1.2'}}</td> -->
-            
+            <td><a [routerLink]="'/admin/sinh-vien/' + item.id + '/bang-diem'">Chi tiết</a></td>
             <td>
                 <button (click)="remove(item)" class="btn btn-danger">Xóa</button>
                 <a [routerLink]="'/admin/sinh-vien/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>

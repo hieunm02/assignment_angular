@@ -1,3 +1,4 @@
+import { AuthServiceService } from './../../services/auth/auth-service.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent implements OnInit {
-  constructor(private router: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private http: HttpClient, private authService:AuthServiceService) { }
+  
+  students: Array<any> = [
 
+  ]
   id: number = 0;
 
+  user: any;
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.id = Number(par['id']);
@@ -23,10 +28,17 @@ export class AdminLayoutComponent implements OnInit {
         console.log(this.id);
         
       });
+      this.getUser();
+  }
+  getUser(){
+    const test:string|any = localStorage.getItem('login_user') ;
+    this.user= JSON.parse(test).name;
+    console.log(this.user);
+    
+  }
+  logout(): void {
+    this.authService.logout();
   }
 
-  students: Array<any> = [
-
-  ]
 
 }

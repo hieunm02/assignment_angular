@@ -4,9 +4,9 @@
         <form action="" [formGroup]="addForm">
             <div class="form-group mt-3">
                 <label for="">Họ và tên</label>
-                <input type="text" class="form-control" [(ngModel)]="studentData.fullname" formControlName="fullname">
-                <div *ngIf="addForm.controls['fullname'].errors && addForm.controls['fullname'].touched || addForm.controls['fullname'].dirty"> 
-                    <span class="text-danger" *ngIf="addForm.controls['fullname'].hasError('required')">Hãy nhập họ tên</span>
+                <input type="text" class="form-control" [(ngModel)]="studentData.name" formControlName="name">
+                <div *ngIf="addForm.controls['name'].errors && addForm.controls['name'].touched || addForm.controls['name'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['name'].hasError('required')">Hãy nhập họ tên</span>
                 </div>
             </div>
             <div class="form-group mt-3">

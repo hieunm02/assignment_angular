@@ -13,9 +13,17 @@ export class AnswerComponent implements OnInit {
 
   id: number = 0;
   code: string = '';
-  answers: Array<any> = [
-
-  ]
+  answers: any = {
+    Text : "",
+    Marks: 0,
+    AnswerId: 0,
+    Answers: [
+      {
+        id: 0,
+        Text: ""
+      }
+    ]
+  };
   ngOnInit(): void {
     this.router.params.subscribe(par => {
       this.id = Number(par['id']);
@@ -26,11 +34,11 @@ export class AnswerComponent implements OnInit {
 
   }
 
-  getAnswer(){
-    this.http.get<any>("http://localhost:3000/"+ this.code + "/" + this.id)
-    .subscribe(data => {
-      this.answers = data;
-      console.log(this.answers);
-    });
+  getAnswer() {
+    this.http.get<any>("http://localhost:3000/" + this.code + "/" + this.id)
+      .subscribe(data => {
+        this.answers = data;
+        console.log(this.answers);
+      });
   }
 }

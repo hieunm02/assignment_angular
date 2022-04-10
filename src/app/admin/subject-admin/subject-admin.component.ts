@@ -31,8 +31,6 @@ export class SubjectAdminComponent implements OnInit {
     this.subjectService.list(searchKeyword)
     .subscribe(data => {
       this.subjects = data;
-      console.log(this.id);
-      
     });
   }
 

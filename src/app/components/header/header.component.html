@@ -1,9 +1,17 @@
 <nav>
     <ul>
         <li><a routerLink="/" routerLinkActive="active">Các môn học</a></li>
-        <li><a routerLink="/" routerLinkActive="active">Khám phá</a></li>
-        <!-- <li style="float: right;"><a routerLink="/login" routerLinkActive="active">Login</a></li> -->
-        <li style="float: right;"><a (click)="logout()" href="javascript:;">Logout</a></li>
+        <li><a routerLink="/progress" routerLinkActive="active">Bảng điểm</a></li>
+        <!-- <li style="float: right;"><a  href="javascript:;">{{user}}</a></li> -->
+        <li class="dropdown float-end" >
+            <a style="cursor: pointer;" class="dropdown-toggle" type="text" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{user}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a style="cursor: pointer;" class="dropdown-item" (click)="logout()">Logout</a></li>
+              <li><a style="cursor: pointer;" class="dropdown-item" >Cập nhật tài khoản</a></li>
+            </ul>
+          </li>
         <li style="float: right;"><a>{{nameUser}}</a></li>
     </ul>
 </nav>

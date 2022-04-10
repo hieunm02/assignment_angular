@@ -5,17 +5,17 @@
             <th>Nội dung câu hỏi</th>
             <th>Câu trả lời</th>
             <th>
-                <a routerLink="/admin/mon-hoc/add" class="btn btn-primary">Thêm</a>
+                <a routerLink="/admin/question/{{code}}/add" class="btn btn-primary">Thêm</a>
             </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of questions | paginate: {itemsPerPage:5,currentPage:p};">
-            <td style="width: 500px;">{{item.Id}}</td>
+            <td style="width: 500px;">{{item.id}}</td>
             <td style="width: 500px;">{{item.Text}}</td>
-            <td><a [routerLink]="'/admin/question/' + code + '/answer/' + item.Id">Chi tiết</a></td>
+            <td><a [routerLink]="'/admin/question/' + code + '/answer/' + item.id">Chi tiết</a></td>
             <td>
-                <a href="" class="btn btn-danger">Xóa</a>
+                <button (click)="remove(item)" class="btn btn-danger">Xóa</button>
                 <a [routerLink]="'/admin/mon-hoc/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
             </td>
         </tr>

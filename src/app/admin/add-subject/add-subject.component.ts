@@ -39,6 +39,8 @@ export class AddSubjectComponent implements OnInit {
     })
   }
 
+
+
   addSubject(){
     this.subjectService.addNew(this.subjectData)
     .subscribe(newsubject => {

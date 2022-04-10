@@ -1,3 +1,6 @@
+import { AddQuestionComponent } from './admin/add-question/add-question.component';
+import { ProgressComponent } from './pages/progress/progress.component';
+import { StudentTranscriptComponent } from './admin/student-transcript/student-transcript.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { AnswerComponent } from './admin/answer/answer.component';
 import { QuestionComponent } from './admin/question/question.component';
@@ -20,12 +23,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,canActivate: [AuthGuard]  },
+  { path: 'progress', component: ProgressComponent,canActivate: [AuthGuard]  },
   { path: 'login', component: LoginComponent },
   { path: 'subject/:id', component: SubjectComponent,canActivate: [AuthGuard] },
   { path: 'quiz/:id', component: QuizComponent,canActivate: [AuthGuard]  },
   { path: 'quiz/:id/ket-qua', component: FinalComponent,canActivate: [AuthGuard]  },
   { path: 'admin', 
-    component: AdminLayoutComponent,
+    component: AdminLayoutComponent,canActivate: [AuthGuard],
     children: [
       {
         path: "dashboard",
@@ -34,6 +38,10 @@ const routes: Routes = [
       {
         path: "sinh-vien",
         component: StudentComponent
+      },
+      {
+        path: "sinh-vien/:id/bang-diem",
+        component: StudentTranscriptComponent
       },
       {
         path: "sinh-vien/add",
@@ -58,6 +66,10 @@ const routes: Routes = [
       {
         path: "question/:id",
         component: QuestionComponent
+      },
+      {
+        path: "question/:id/add",
+        component: AddQuestionComponent
       },
       {
         path: "question/:code/answer/:id",

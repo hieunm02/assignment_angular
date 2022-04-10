@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-css">
+        <header>
+            <a routerLink="/" routerLinkActive="active"><img src="https://ap.poly.edu.vn/images/logo.png" alt="" class="logo"></a>
+            <app-header></app-header>
+        </header>
+        <div class="container mt-5" style="border-style: double; padding: 20px;">
+        <div *ngFor="let item of user" style="font-weight: bold;">
+            Mã môn : <a style="color: blue;">{{item.subject}}</a> -> Điểm : <span [ngClass]="{'diem-liet': item.score < 5, 'diem-dat': item.score >=5}">{{item.score}}</span>
+        </div>
+    </div>
+        <main style="padding: 10px;">
+        </main>
+
+    </div>
+</body>
+
+</html>

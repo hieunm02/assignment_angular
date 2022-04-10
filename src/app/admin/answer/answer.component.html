@@ -1,7 +1,6 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Mã đáp án</th>
             <th>Nội dung</th>
             <th>Kết quả</th>
             <th>
@@ -10,15 +9,14 @@
         </tr>
     </thead>
     <tbody>
-        <div *ngFor="let item of answers">
-        <tr *ngFor="let asw of item.Answers">
-            <td>{{asw.Id}}</td>
+        <tr *ngFor="let asw of answers.Answers">
             <td>{{asw.Text}}</td>
+            <td *ngIf="asw.id == answers.AnswerId"  [ngClass]="{'dung': asw.id == answers.AnswerId, 'sai':asw.id != answers.AnswerId}">Đáp án đúng</td>
+            <td *ngIf="asw.id != answers.AnswerId" [ngClass]="{'dung': asw.id == answers.AnswerId, 'sai':asw.id != answers.AnswerId}" >Đáp án sai</td>
             <td>
                 <a href="" class="btn btn-danger">Xóa</a>
-                <a [routerLink]="'/admin/mon-hoc/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
+                <a [routerLink]="" class="btn btn-success ms-2">Cập nhật</a>
             </td>
         </tr>
-    </div>
     </tbody>
 </table>

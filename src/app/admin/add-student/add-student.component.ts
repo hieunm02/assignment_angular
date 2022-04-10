@@ -13,9 +13,8 @@ export class AddStudentComponent implements OnInit {
   listStudents: Array<any> = [];
 
   studentData = {
-    username: "",
     password: "",
-    fullname: "",
+    name: "",
     email: "",
     gender: "",
     birthday: "",
@@ -24,9 +23,8 @@ export class AddStudentComponent implements OnInit {
   }
 
   addForm: FormGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
-    fullname: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     gender: new FormControl('', Validators.required),
     birthday: new FormControl('', Validators.required),

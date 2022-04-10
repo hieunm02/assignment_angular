@@ -33,4 +33,13 @@ export class QuestionComponent implements OnInit {
     });
   }
 
+  remove(question: any){
+    const confilm = window.confirm('Bạn có chắc muốn xóa')
+    if(confilm){
+    this.http.delete("http://localhost:3000/" + this.code + "/" + question.id)
+    .subscribe(data => {
+      this.questions = this.questions.filter(item => item.id != question.id)
+    })
+  }
+  }
 }

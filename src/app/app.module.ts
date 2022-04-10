@@ -31,6 +31,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { StudentTranscriptComponent } from './admin/student-transcript/student-transcript.component';
+import { ProgressComponent } from './pages/progress/progress.component';
+import { AddQuestionComponent } from './admin/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     EditSubjectComponent,
     QuestionComponent,
     AnswerComponent,
+    StudentTranscriptComponent,
+    ProgressComponent,
+    AddQuestionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="col-6 offset-3 mt-5">
-        <form action="" [formGroup]="addForm">
+        <form action="" [formGroup]="addForm" enctype="multipart/form-data">
             <div class="form-group mt-3">
                 <label for="">Tên quiz</label>
                 <input type="text" class="form-control" [(ngModel)]="subjectData.Code" formControlName="Code">
@@ -17,14 +17,14 @@
             </div> 
             <div class="form-group mt-3">
                 <label for="">Logo</label>
-                <input type="text" class="form-control" [(ngModel)]="subjectData.Logo" formControlName="Logo">
+                <input type="file" class="form-control" [(ngModel)]="subjectData.Logo" formControlName="Logo">
                 <div *ngIf="addForm.controls['Logo'].errors && addForm.controls['Logo'].touched || addForm.controls['Logo'].dirty"> 
                     <span class="text-danger" *ngIf="addForm.controls['Logo'].hasError('required')">Hãy nhập logo</span>
                 </div>
             </div>
            
             <div>
-                <button (click)="addSubject()" class="btn btn-primary mt-3">Thêm</button>
+                <button [disabled]="addForm.invalid" (click)="addSubject()" class="btn btn-primary mt-3">Thêm</button>
             </div>
         </form>
     </div>

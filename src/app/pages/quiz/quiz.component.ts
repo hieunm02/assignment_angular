@@ -26,7 +26,8 @@ export class QuizComponent implements OnInit {
   ]
 
 
-  percentCorect: string = '';
+  percentCorect: string = '0';
+
   public answers: number[] = [];
   ngOnInit(): void {
 
@@ -91,7 +92,7 @@ console.log(this.user_select_answer);
     if(confirm){
     let correctAns = 0;
     this.user_select_answer.forEach((el) => {
-      let q = this.questions.find(item => item.Id == el.qId);
+      let q = this.questions.find(item => item.id == el.qId);
       if(q.AnswerId == el.aId){
         correctAns ++;
       }
@@ -120,7 +121,6 @@ console.log(this.user_select_answer);
       console.log(u);
       
     })
-  alert("Điểm của bạn là :" + this.percentCorect)
 
   }
   }
