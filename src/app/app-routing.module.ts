@@ -1,3 +1,4 @@
+import { RoleGuard } from './helpers/role.guard';
 import { AddQuestionComponent } from './admin/add-question/add-question.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { StudentTranscriptComponent } from './admin/student-transcript/student-transcript.component';
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditQuestionComponent } from './admin/edit-question/edit-question.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,canActivate: [AuthGuard]  },
@@ -29,7 +31,7 @@ const routes: Routes = [
   { path: 'quiz/:id', component: QuizComponent,canActivate: [AuthGuard]  },
   { path: 'quiz/:id/ket-qua', component: FinalComponent,canActivate: [AuthGuard]  },
   { path: 'admin', 
-    component: AdminLayoutComponent,canActivate: [AuthGuard],
+    component: AdminLayoutComponent,canActivate: [RoleGuard],
     children: [
       {
         path: "dashboard",
@@ -72,9 +74,13 @@ const routes: Routes = [
         component: AddQuestionComponent
       },
       {
+        path: "question/:code/edit/:id",
+        component: EditQuestionComponent
+      },
+      {
         path: "question/:code/answer/:id",
         component: AnswerComponent
-      },
+      }
     ]
   },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page

@@ -1,5 +1,7 @@
+import { UserService } from './../../services/user/user.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-student.component.css']
 })
 export class EditStudentComponent implements OnInit {
-  constructor(private router: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private http: HttpClient, private userService : UserService,private route: Router) { }
   student: any = {
     birthday: "",
     email: "",
@@ -32,8 +34,25 @@ export class EditStudentComponent implements OnInit {
       });
   }
 
+  editForm: FormGroup = new FormGroup({
+    name: new FormControl('', Validators.required),
+    id: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    birthday: new FormControl('', Validators.required)
+  })
+
   edit(item: any){
-    this.student = {...item}
+    console.log(item);
+    this.userService.update(item)
+    .subscribe(newStudent => {
+      this.student.push(newStudent);
+    });
+    setTimeout(() => {
+      this.route.navigate(['/admin/sinh-vien']);
+
+      
+    }, 1000);
   }
   
 

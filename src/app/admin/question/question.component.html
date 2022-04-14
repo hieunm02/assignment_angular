@@ -1,7 +1,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Mã câu hỏi</th>
+            <th (click)="sort('id')">Mã câu hỏi <img src="https://img.icons8.com/ios-glyphs/344/sort.png" width="15px" alt=""></th>
             <th>Nội dung câu hỏi</th>
             <th>Câu trả lời</th>
             <th>
@@ -10,13 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of questions | paginate: {itemsPerPage:5,currentPage:p};">
+        <tr *ngFor="let item of questions | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p};">
             <td style="width: 500px;">{{item.id}}</td>
             <td style="width: 500px;">{{item.Text}}</td>
             <td><a [routerLink]="'/admin/question/' + code + '/answer/' + item.id">Chi tiết</a></td>
             <td>
                 <button (click)="remove(item)" class="btn btn-danger">Xóa</button>
-                <a [routerLink]="'/admin/mon-hoc/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
+                <a [routerLink]="'/admin/question/' + code + '/edit/' + item.id" class="btn btn-success ms-2">Cập nhật</a>
             </td>
         </tr>
     </tbody>

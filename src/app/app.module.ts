@@ -34,6 +34,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
 import { StudentTranscriptComponent } from './admin/student-transcript/student-transcript.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { AddQuestionComponent } from './admin/add-question/add-question.component';
+import { EditQuestionComponent } from './admin/edit-question/edit-question.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AddQuestionComponent } from './admin/add-question/add-question.componen
     StudentTranscriptComponent,
     ProgressComponent,
     AddQuestionComponent,
+    EditQuestionComponent,
   ],
   imports: [
     BrowserModule,

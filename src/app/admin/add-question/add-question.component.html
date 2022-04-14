@@ -13,12 +13,10 @@
             <button  (click)="addAnswer()"  class="btn btn-warning float-end mt-3 mb-3">
                 Thêm đáp án
             </button>
-            <div class="form-group mt-3" *ngFor="let na of newAnswer; let i = index">
-                <div *ngFor="let asw of questionData.Answers ">
-                <label for="">Đáp án </label>
-                <input type="text" class="form-control" [(ngModel)]="asw.Text"  name="na" >
-                <input type="radio" class="form-check-input me-2" name="" value="0">Đúng | 
-                <input type="radio" class="form-check-input me-2" name="" value="1">Sai
+            <div class="form-group mt-3" *ngFor="let na of newAnswer">
+                <div *ngFor="let asw of questionData.Answers;let i = index ">
+                <input type="text" class="form-control" [(ngModel)]="asw.Text"  formControlName="Text" >
+                <input type="radio" class="form-check-input me-2" [(ngModel)]="asw.id" value="true" formControlName="id" name="{{i+1}}">Đúng 
                 <button  (click)="removeAnswer(i)" class="btn btn-danger float-end mt-3">
                     Xóa đáp án
                 </button>

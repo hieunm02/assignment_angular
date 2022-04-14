@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="col-6 offset-3 mt-5">
+        <form action="" [formGroup]="editForm">
+            <div class="form-group mt-3" >
+                <label for="">Câu hỏi</label>
+                <input type="text" class="form-control" [(ngModel)]="question.Text" formControlName="Text">
+            </div>
+            
+            <div>
+                <button (click)="edit(question)" type="button" class="btn btn-primary mt-3">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+</div>

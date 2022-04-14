@@ -1,24 +1,24 @@
 <div class="container-fluid">
     <div class="col-6 offset-3 mt-5">
-        <form action="">
+        <form action="" [formGroup]="editForm">
             <div class="form-group mt-3" >
                 <label for="">Họ và tên</label>
-                <input type="text" class="form-control" [value]="student.name">
+                <input type="text" class="form-control" [(ngModel)]="student.name" formControlName="name">
             </div>
             <div class="form-group mt-3">
                 <label for="">Email</label>
-                <input type="text" class="form-control" [value]="student.email">
+                <input type="text" class="form-control" [(ngModel)]="student.email" formControlName="email">
             </div>
             <div class="form-group mt-3">
                 <label for="">Password</label>
-                <input type="password" class="form-control" [value]="student.password">
+                <input type="password" class="form-control" [(ngModel)]="student.password" formControlName="password">
             </div>
             <div class="form-group mt-3">
                 <label for="">Ngày sinh</label>
-                <input type="date" class="form-control" [value]="student.birthday">
+                <input type="date" class="form-control" [(ngModel)]="student.birthday" formControlName="birthday">
             </div>
             <div>
-                <button (click)="edit(student)" class="btn btn-primary mt-3">Cập nhật</button>
+                <button (click)="edit(student)" type="button" class="btn btn-primary mt-3">Cập nhật</button>
             </div>
         </form>
     </div>

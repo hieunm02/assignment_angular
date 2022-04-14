@@ -18,11 +18,23 @@ export class AddQuestionComponent implements OnInit {
     {
       "Text": "",
       "Marks": 1,
-      "AnswerId": 0,
+      "AnswerId": "true",
       "Answers":
         [
           {
-            "id": 0,
+            "id": "",
+            "Text": ""
+          },
+          {
+            "id": "",
+            "Text": ""
+          },
+          {
+            "id": "",
+            "Text": ""
+          },
+          {
+            "id": "",
             "Text": ""
           }
         ]
@@ -32,6 +44,7 @@ export class AddQuestionComponent implements OnInit {
   code: string = "";
   addForm: FormGroup = new FormGroup({
     Text: new FormControl('', Validators.required),
+    id: new FormControl('', Validators.required)
   })
 
   constructor(private http: HttpClient, private router: Router, private rou: ActivatedRoute) { }
@@ -46,7 +59,6 @@ export class AddQuestionComponent implements OnInit {
       .subscribe(newQuestion => {
         this.listQuestions.push(newQuestion);
         console.log(this.questionData);
-
       });
     setTimeout(() => {
       this.router.navigate(['admin/question/' + this.code]);
