@@ -1,4 +1,5 @@
-# MyApp
+# Bài tập lớn môn Frontend Framework (Angular)
+Sử dụng ngôn ngữ Angular phiên bản 13.3.0 (Single Page Application) kết hợp với API Json-server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
